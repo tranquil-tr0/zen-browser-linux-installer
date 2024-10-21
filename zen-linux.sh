@@ -25,7 +25,9 @@ function install {
         exit 1
     fi
 
-    temp_dir="/tmp"
+    echo "===== Installing Zen: temporary directory made at ~/build"
+    mkdir -p "~/build"
+    temp_dir="~/build/$(uuidgen)"
     mkdir -p "$temp_dir/content"
     # zen does not exist at the location
     echo "===== Downloading zen to $temp_dir/zen.tar.bz2"
@@ -45,9 +47,8 @@ function install {
     echo "===== Moving zen install to $zen_install"
     mv $temp_dir/content/zen/** "$zen_install/"
 
-    echo "===== Removing temporary files"
-    rm -rf "$temp_dir/content"
-    rm -rf "$temp_dir/zen.tar.bz2"
+    echo "===== Removing temporary directory"
+    rm -rf "$temp_dir"
 
     echo "=========================================="
     echo "===== Zen is installed!"
