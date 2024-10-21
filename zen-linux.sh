@@ -27,7 +27,7 @@ function install {
 
     echo "===== Installing Zen: temporary directory made at ~/build"
     mkdir -p "~/build"
-    temp_dir="~/build/$(uuidgen)"
+    temp_dir="~/build"
     mkdir -p "$temp_dir/content"
     # zen does not exist at the location
     echo "===== Downloading zen to $temp_dir/zen.tar.bz2"
@@ -77,8 +77,8 @@ function desktop {
         echo "~/.local/share/applications doesn't exist. You may have to proceed manually!"
     fi
 
-    temp_dir="/tmp/$(uuidgen)"
-    mkdir -p "$temp_dir"
+    mkdir -p "~/build"
+    temp_dir="~/build"
 
     touch "$temp_dir/zen.desktop"
     echo "[Desktop Entry]" >> "$temp_dir/zen.desktop"
