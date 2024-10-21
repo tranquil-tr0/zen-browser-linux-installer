@@ -106,6 +106,7 @@ function desktop {
 function help {
     echo "help:"
     echo "  install [location]   -- installs the latest version of Zen to the specified directory"
+    echo "  install generic   -- installs Zen as detailed above, but with the generic files"
     echo "  uninstall [location] -- removes Zen installation (but not data) from your system"
     echo "  desktop [location] -- creates a desktop entry for your Zen installation"
     echo "  help -- you should know what this does since you're here :)"
