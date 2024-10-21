@@ -45,4 +45,11 @@ attempts to create a desktpp entry for the specified installation of Zen, or the
 
 ### help
 
-well, you know, help
+help
+
+
+## Issues:
+
+report in issues tab
+and/or
+try commands or whole program from original project (referenced above)
