@@ -8,6 +8,11 @@ default_install_location="$HOME/.zen/browser"
 zen_install="${2-$default_install_location}"
 
 zen_download_file="zen.linux-specific.tar.bz2"
+    if [ "$2" == "generic" ]; then
+        zen_download_file="zen.linux-generic.tar.bz2"
+        zen_install="$default_install_location"
+        echo "Using generic files, WARNING: these are not recommended for newer systems!!"
+    fi
 zen_release_tag="$(curl -s https://api.github.com/repos/zen-browser/desktop/releases/latest | jq -r ".tag_name")"
 zen_download_tarball="https://github.com/zen-browser/desktop/releases/download/$zen_release_tag/$zen_download_file"
 
@@ -20,7 +25,7 @@ function install {
         exit 1
     fi
 
-    temp_dir="/tmp/$(uuidgen)"
+    temp_dir="/tmp"
     mkdir -p "$temp_dir/content"
     # zen does not exist at the location
     echo "===== Downloading zen to $temp_dir/zen.tar.bz2"
@@ -40,8 +45,9 @@ function install {
     echo "===== Moving zen install to $zen_install"
     mv $temp_dir/content/zen/** "$zen_install/"
 
-    echo "===== Removing temporary dir"
-    # rm -rf "$temp_dir"
+    echo "===== Removing temporary files"
+    rm -rf "$temp_dir/content"
+    rm -rf "$temp_dir/zen.tar.bz2"
 
     echo "=========================================="
     echo "===== Zen is installed!"
