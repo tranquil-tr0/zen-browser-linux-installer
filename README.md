@@ -58,3 +58,7 @@ help
 report in issues tab
 and/or
 try commands or whole program from original project (referenced above)
+
+## Alternatives (untested, I also can't help with these):
+
+If you do not like this method of installing, feel free to use [pacstall](https://pacstall.dev/) to install the [generic](https://pacstall.dev/packages/zen-browser-generic-bin) or [optimized](https://pacstall.dev/packages/zen-browser-specific-bin) version of the browser
