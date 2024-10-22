@@ -1,7 +1,7 @@
 # zen-browser-linux-installer
 
 Install [Zen](https://zen-browser.app), "the best way to browse the web" from the portable tarball!
-ALL CREDIT TO [NEUNER](https://codeberg.org/neuner/zen-linux.sh), the creator of the original [project](https://codeberg.org/neuner/zen-linux.sh). (The original project is also probably safer, since I am not experienced)
+ALL CREDIT TO [NEUNER](https://codeberg.org/neuner/zen-linux.sh), the creator of the original [project](https://codeberg.org/neuner/zen-linux.sh).
 
 #### Differences from original:
 
