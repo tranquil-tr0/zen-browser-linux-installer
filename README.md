@@ -5,9 +5,10 @@ ALL CREDIT TO [NEUNER](https://codeberg.org/neuner/zen-linux.sh), the creator of
 
 #### Differences from original:
 
-- removes temporary files completely
+- removes temporary files completely after installation
 - allows for generic install
-- removes need for uuidgen
+- removes need for uuidgen by moving to home
+- fixed an echo line to improve clarity
 
 ## Getting started
 
