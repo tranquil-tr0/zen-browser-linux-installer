@@ -1,4 +1,4 @@
-# zen-browser-linux-installer
+# A Zen Browser installer, for Linux distros without the AUR
 
 Install [Zen](https://zen-browser.app), "the best way to browse the web" in Linux, without using the Appimage or Flatpak! For other options, see the [alternatives](##Alternatives (untested, I also can't help with these)) section below
 ALL CREDIT TO [NEUNER](https://codeberg.org/neuner/zen-linux.sh), the creator of the original [project](https://codeberg.org/neuner/zen-linux.sh), and the [Zen](https://zen-browser.app/) team!
@@ -53,6 +53,7 @@ try commands or whole program from original project (referenced above)
 
 ## Alternatives (untested, I also can't help with these):
 
+If you are running Arch, use the AUR
 If you do not like this method of installing, feel free to use
 - [pacstall](https://pacstall.dev/) to install the [generic](https://pacstall.dev/packages/zen-browser-generic-bin) or [optimized](https://pacstall.dev/packages/zen-browser-specific-bin) version of the browser
 - the [zen](https://github.com/zen-browser/desktop) releases page to find the flatpak or appimage file
