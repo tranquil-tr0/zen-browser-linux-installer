@@ -26,8 +26,8 @@ function install {
     fi
 
     echo "===== Installing Zen: temporary directory made at ~/build"
-    mkdir -p "~/build"
-    temp_dir="~/build"
+    mkdir -p "build/"
+    temp_dir="build"
     mkdir -p "$temp_dir/content"
     # zen does not exist at the location
     echo "===== Downloading zen to $temp_dir/zen.tar.bz2"
@@ -54,7 +54,7 @@ function install {
     echo "===== Zen is installed!"
     echo "To make a desktop entry (so zen will appear on your system's navigation) use $0 desktop"
     echo "To use open zen in terminals, use:"
-    echo "PATH=$PATH:$zen_install/zen"
+    echo "PATH=\$PATH:$zen_install/zen"
 }
 
 function uninstall {
@@ -77,8 +77,8 @@ function desktop {
         echo "~/.local/share/applications doesn't exist. You may have to proceed manually!"
     fi
 
-    mkdir -p "~/build"
-    temp_dir="~/build"
+    mkdir -p "build/"
+    temp_dir="build"
 
     touch "$temp_dir/zen.desktop"
     echo "[Desktop Entry]" >> "$temp_dir/zen.desktop"
