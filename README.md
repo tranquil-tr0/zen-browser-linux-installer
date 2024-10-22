@@ -3,9 +3,9 @@
 Install [Zen](https://zen-browser.app), "the best way to browse the web"
 ALL CREDIT TO [NEUNER](https://codeberg.org/neuner/zen-linux.sh), the creator of the original [project](https://codeberg.org/neuner/zen-linux.sh). (The original project is also probably safer, since I am not experienced)
 
-#### This project has 2 differences(as of 10/20/2024):
+#### Differences from original:
 
-- removes temporary install file archives
+- removes temporary files completely
 - allows for generic install
 - removes need for uuidgen
 
