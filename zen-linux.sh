@@ -13,6 +13,11 @@ zen_download_file="zen.linux-specific.tar.bz2"
         zen_install="$default_install_location"
         echo "Using generic files, WARNING: these are not recommended for newer systems!!"
     fi
+    if [ "$3" == "generic" ]; then
+        zen_download_file="zen.linux-generic.tar.bz2"
+        echo "Using generic files, WARNING: these are not recommended for newer systems!!"
+        echo "Installing to $zen_install"
+    fi
 zen_release_tag="$(curl -s https://api.github.com/repos/zen-browser/desktop/releases/latest | jq -r ".tag_name")"
 zen_download_tarball="https://github.com/zen-browser/desktop/releases/download/$zen_release_tag/$zen_download_file"
 
@@ -107,6 +112,7 @@ function help {
     echo "help:"
     echo "  install [location]   -- installs the latest version of Zen to the specified directory"
     echo "  install generic   -- installs Zen as detailed above, but with the generic files"
+    echo "  install [location] generic   -- installs Zen as detailed above, but with the generic files, and at the specified location"
     echo "  uninstall [location] -- removes Zen installation (but not data) from your system"
     echo "  desktop [location] -- creates a desktop entry for your Zen installation"
     echo "  help -- you should know what this does since you're here :)"
@@ -125,7 +131,7 @@ command=$1
 
 case $command in
     install)
-        install $2
+        install $2 $3
         ;;
     uninstall)
         uninstall $2
