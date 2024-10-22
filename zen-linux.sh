@@ -6,6 +6,7 @@
 
 default_install_location="$HOME/.zen/browser"
 zen_install="${2-$default_install_location}"
+install_parent="${2-$HOME/.zen}"
 
 zen_download_file="zen.linux-specific.tar.bz2"
     if [ "$2" == "generic" ]; then
@@ -30,9 +31,8 @@ function install {
         exit 1
     fi
 
-    echo "===== Installing Zen: temporary directory made at ~/build"
-    mkdir -p "build/"
-    temp_dir="build"
+    echo "===== Installing Zen: temporary directory made at $HOME/build"
+    temp_dir="$HOME/build"
     mkdir -p "$temp_dir/content"
     # zen does not exist at the location
     echo "===== Downloading zen to $temp_dir/zen.tar.bz2"
@@ -58,14 +58,24 @@ function install {
     echo "=========================================="
     echo "===== Zen is installed!"
     echo "To make a desktop entry (so zen will appear on your system's navigation) use $0 desktop"
-    echo "To use open zen in terminals, use:"
-    echo "PATH=\$PATH:$zen_install/zen"
+    echo "To use open zen in terminals, add the following line to ~/.bashrc:"
+    echo "export PATH=$zen_install:\$PATH"
 }
 
 function uninstall {
     if [ -d "$zen_install" ]; then
         echo "Zen install exists. Removing it!"
         rm -rfv $zen_install
+    else
+        echo "Zen does not exist at $zen_install"
+        exit 1
+    fi
+}
+
+function totalremoval {
+    if [ -d "$install_parent" ]; then
+        echo "Zen data and/or data exists. Removing it!"
+        rm -rfv $install_parent
     else
         echo "Zen does not exist at $zen_install"
         exit 1
@@ -82,8 +92,8 @@ function desktop {
         echo "~/.local/share/applications doesn't exist. You may have to proceed manually!"
     fi
 
-    mkdir -p "build/"
-    temp_dir="build"
+    temp_dir="$HOME/build"
+    mkdir -p "$temp_dir"
 
     touch "$temp_dir/zen.desktop"
     echo "[Desktop Entry]" >> "$temp_dir/zen.desktop"
@@ -114,8 +124,9 @@ function help {
     echo "  install generic   -- installs Zen as detailed above, but with the generic files"
     echo "  install [location] generic   -- installs Zen as detailed above, but with the generic files, and at the specified location"
     echo "  uninstall [location] -- removes Zen installation (but not data) from your system"
+    echo "  totalremoval [location] -- removes Zen installation (including data) from your system"
     echo "  desktop [location] -- creates a desktop entry for your Zen installation"
-    echo "  help -- you should know what this does since you're here :)"
+    echo "  help -- this is help!"
     echo ""
     echo "note: location defaults to ~/.zen/browser if unspecified"
 }
@@ -135,6 +146,9 @@ case $command in
         ;;
     uninstall)
         uninstall $2
+        ;;
+    totalremoval)
+        totalremoval $2
         ;;
     desktop)
         desktop $2

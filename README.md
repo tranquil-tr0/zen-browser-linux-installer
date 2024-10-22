@@ -1,6 +1,6 @@
 # zen-browser-linux-installer
 
-Install [Zen](https://zen-browser.app), "the best way to browse the web"
+Install [Zen](https://zen-browser.app), "the best way to browse the web" from the portable tarball!
 ALL CREDIT TO [NEUNER](https://codeberg.org/neuner/zen-linux.sh), the creator of the original [project](https://codeberg.org/neuner/zen-linux.sh). (The original project is also probably safer, since I am not experienced)
 
 #### Differences from original:
@@ -9,6 +9,7 @@ ALL CREDIT TO [NEUNER](https://codeberg.org/neuner/zen-linux.sh), the creator of
 - allows for generic install
 - removes need for uuidgen by moving to home
 - fixed an echo line to improve clarity
+- allows removal of user data when uninstalling
 
 ## Getting started
 
