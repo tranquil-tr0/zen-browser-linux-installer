@@ -1,3 +1,6 @@
+# IMPORTANT!! I'm pretty sure this still works, but I am using [Pacstall](##Alternatives (untested, I also can't help with these)), thus I am instead suggesting Pacstall as the method of choice for any Ubuntu or Debian distro
+I'll still try to maintain this though, so I'm not archiving it, and feel free to file an issue if anything breaks.
+
 # A Zen Browser installer, for Linux distros without the AUR
 
 Install [Zen](https://zen-browser.app), "the best way to browse the web" in Linux, without using the Appimage or Flatpak! For other options, see the [alternatives](##Alternatives (untested, I also can't help with these)) section below
