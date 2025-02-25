@@ -1,3 +1,5 @@
+# This is done, since the official project has a tarball installer now.
+
 # IMPORTANT!! I'm pretty sure this still works, but I am using [Pacstall](##Alternatives (untested, I also can't help with these)), thus I am instead suggesting Pacstall as the method of choice for any Ubuntu or Debian distro
 I'll still try to maintain this though, so I'm not archiving it, and feel free to file an issue if anything breaks.
 
